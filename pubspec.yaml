@@ -43,6 +43,7 @@ dependencies:
   glassmorphism:
   intl:
   image_picker:
+  agora_rtc_engine:
 
 dev_dependencies:
   flutter_test:
