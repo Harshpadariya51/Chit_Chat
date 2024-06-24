@@ -295,14 +295,21 @@ class _ChatPageState extends State<ChatPage> {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: const Text('Cancel'),
+                        child: const Text(
+                          'Cancel',
+                          style: TextStyle(color: Colors.green),
+                        ),
                       ),
                       TextButton(
                         onPressed: () {
                           _deleteMessage(messageId);
                           Navigator.of(context).pop();
                         },
-                        child: const Text('Delete'),
+                        child: const Text(
+                          'Delete',
+                          style: TextStyle(
+                              color: Colors.green, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ],
                   );
@@ -322,7 +329,7 @@ class _ChatPageState extends State<ChatPage> {
                 isCurrentUser
                     ? Container()
                     : Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
+                        padding: const EdgeInsets.only(right: 4.0),
                         child: CircleAvatar(
                           radius: 12,
                           child: Text(
@@ -403,7 +410,7 @@ class _ChatPageState extends State<ChatPage> {
                                       horizontal: 8, vertical: 5),
                                   margin: const EdgeInsets.only(bottom: 5),
                                   decoration: BoxDecoration(
-                                    color: Colors.grey[200],
+                                    color: Colors.black12,
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Text(
@@ -439,7 +446,7 @@ class _ChatPageState extends State<ChatPage> {
                 ),
                 isCurrentUser
                     ? Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
+                        padding: const EdgeInsets.only(left: 4.0),
                         child: CircleAvatar(
                           radius: 12,
                           child: Text(
@@ -490,7 +497,6 @@ class _ChatPageState extends State<ChatPage> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-        height: 50,
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.3),
           borderRadius: BorderRadius.circular(35),
@@ -527,13 +533,24 @@ class _ChatPageState extends State<ChatPage> {
             ),
             if (isTextFieldEmpty)
               IconButton(
-                icon: const Icon(Icons.image_outlined, color: Colors.blue),
+                icon: const Icon(
+                  Icons.image_outlined,
+                ),
                 onPressed: _pickAndUploadImage,
               ),
-            IconButton(
-              icon: const Icon(Icons.send, color: Colors.blue),
-              onPressed: () => _sendMessage(),
+            CircleAvatar(
+              backgroundColor: Colors.green,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.send,
+                  size: 25,
+                ),
+                onPressed: () => _sendMessage(),
+              ),
             ),
+            const SizedBox(
+              width: 5,
+            )
           ],
         ),
       ),

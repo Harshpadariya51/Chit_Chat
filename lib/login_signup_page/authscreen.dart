@@ -43,7 +43,7 @@ class AuthScreen extends StatelessWidget {
                   const Text(
                     'Welcome to\nChit Chat!',
                     style: TextStyle(
-                      fontSize: 30.0,
+                      fontSize: 22.0,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF0D47A1), // Dark Blue
                     ),
